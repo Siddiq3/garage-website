@@ -31,8 +31,8 @@ after another and the spanner turns into place, as if it were being tightened;
 pointing at the header logo gives it another small turn. All of it is transform
 and opacity only, and all of it stops under `prefers-reduced-motion`.
 
-The mark's geometry lives in `brand/` at the repo root, which also generates the
-app's launcher icons from the same shapes.
+The mark's geometry is in `shared/logo-geometry.json`, which the mobile app also
+holds; `tests/logo.test.js` fails if this component stops matching it.
 
 ### The look
 
@@ -196,4 +196,3 @@ backend** to this site's URL — that value is what the app shows and links to.
 - Registration happens in the app, so there is no sign-up form here.
 - Payment history shows what `GET /subscription/payments` returns; the tax
   receipt itself is emailed by Cashfree.
-# garage-website
