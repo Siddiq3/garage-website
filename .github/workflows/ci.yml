@@ -1,0 +1,42 @@
+name: CI
+
+# This repository is the marketing and payments website, so every push and pull
+# request runs the whole suite — there is no sibling project to filter against.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        # ci, not install: builds exactly the lockfile, so CI cannot silently
+        # test a different dependency tree than the one that ships.
+        run: npm ci
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Lint
+        run: npx eslint
+
+      - name: Run tests
+        run: npx vitest run
+
+      - name: Build
+        # A build failure is a broken deploy, so it gates the branch too.
+        env:
+          NEXT_PUBLIC_API_BASE_URL: https://api.example.invalid
+        run: npm run build
