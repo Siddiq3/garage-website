@@ -5,7 +5,7 @@ import { formatInr } from '@/lib/format';
 
 /** The app screens fanned out under the headline, each with its own label. */
 const FAN = [
-  { src: '/app/login.png', alt: 'Signing in to SpannerBook', label: 'Your garage 🔧', tint: 'var(--tint-peach)', tilt: -9, lift: 26 },
+  { src: '/app/jobs.png', alt: "Today's jobs and what each one owes", label: 'Job cards 📋', tint: 'var(--tint-peach)', tilt: -9, lift: 26 },
   { src: '/app/dashboard.png', alt: 'The SpannerBook dashboard', label: 'Today 📊', tint: 'var(--tint-lilac)', tilt: -3, lift: 8 },
   { src: '/app/subscription.png', alt: 'The subscription screen', label: 'Billing 🧾', tint: 'var(--tint-mint)', tilt: 4, lift: 14 },
 ];
@@ -18,7 +18,7 @@ const PANELS = [
     title: 'Open a job card the moment the vehicle rolls in.',
     body: 'Number plate, customer, complaint — done. Track it from received to delivered so nothing sits forgotten in the corner of the workshop.',
     shot: '/app/dashboard.png',
-    alt: 'Open jobs and money due on the dashboard',
+    alt: 'Open jobs, money collected and money due, on the dashboard',
   },
   {
     tint: 'var(--tint-mint)',
@@ -26,8 +26,8 @@ const PANELS = [
     pillColour: 'var(--accent)',
     title: 'Parts and work chosen by tapping, not spelling.',
     body: 'Bore work, timing chain, self motor, oil seal, clutch plate, brake shoe — hundreds of them, suggested for the vehicle in front of you. Record which mechanic did what, and keep labour as one charge on the bill.',
-    shot: '/app/dashboard.png',
-    alt: 'Adding parts and work to a job',
+    shot: '/app/jobdetail.png',
+    alt: 'A job card showing the work done, who did it, and the parts used',
   },
   {
     tint: 'var(--tint-peach)',
@@ -35,8 +35,8 @@ const PANELS = [
     pillColour: 'var(--accent)',
     title: 'Bills, part payments and the balance still owed.',
     body: 'Parts plus labour plus other charges, totalled by the server rather than guessed on the phone. Take part payments, and the balance is there every time the customer walks back in.',
-    shot: '/app/subscription.png',
-    alt: 'A bill with the balance due',
+    shot: '/app/jobs.png',
+    alt: 'Each job showing its total, what is paid and the balance still due',
   },
 ];
 
