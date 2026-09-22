@@ -67,7 +67,7 @@ it off, and a `<noscript>` rule shows everything if JavaScript never runs.
 
 ```bash
 npm install
-cp .env.example .env.local   # point NEXT_PUBLIC_API_BASE_URL at your backend
+cp .env.example .env.local   # point API_BASE_URL at your backend
 npm run dev                  # http://localhost:3000
 ```
 

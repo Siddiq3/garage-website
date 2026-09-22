@@ -38,5 +38,5 @@ jobs:
       - name: Build
         # A build failure is a broken deploy, so it gates the branch too.
         env:
-          NEXT_PUBLIC_API_BASE_URL: https://api.example.invalid
+          API_BASE_URL: https://api.example.invalid
         run: npm run build
