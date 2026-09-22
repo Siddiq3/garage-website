@@ -114,7 +114,7 @@ a { color: var(--ink); }
 /* ---- hero ---- */
 .hero { padding: 40px 0 0; text-align: center; }
 .hero h1 { max-width: 18ch; margin-inline: auto; }
-/* The capsule and the emoji belong on the same line as the price. */
+/* Keeps the currency symbol and figure from splitting across a line break. */
 .price-line { white-space: nowrap; }
 /* The price sits in an outlined capsule, the way a sticker would. */
 .price-capsule {

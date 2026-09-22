@@ -88,7 +88,7 @@ export default function HomePage() {
           <h1>
             Run your whole garage from your phone, at just{' '}
             <span className="price-line">
-              <span className="price-capsule">{formatInr(config.priceInr)}</span> 😮
+              <span className="price-capsule">{formatInr(config.priceInr)}</span>
             </span>
           </h1>
           <p className="lead">
