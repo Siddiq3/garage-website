@@ -76,7 +76,7 @@ a { color: var(--ink); }
 .sb-logo { display: block; flex: none; }
 .sb-wordmark { display: inline-flex; align-items: center; gap: 9px; }
 .sb-name { font-family: var(--font-heading); font-weight: 800; letter-spacing: -0.04em; color: var(--ink); white-space: nowrap; }
-.sb-name-light { color: var(--text-subtle); }
+.sb-name-light { color: var(--accent); }
 .sb-logo-animated { animation: sb-fade 400ms ease-out both; }
 @keyframes sb-fade { from { opacity: 0; transform: scale(0.96); } }
 
