@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { apiFetch } from '@/lib/api';
 import { config } from '@/lib/config';
+import { Icon } from '@/components/Icon';
 import { saveSession } from '@/lib/session';
 import { LIMITS, RULES, validate } from '@/lib/validation';
 
@@ -20,6 +21,7 @@ export function LoginForm() {
   const [errors, setErrors] = useState({});
   const [failure, setFailure] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const set = (field) => (event) => setValues((current) => ({ ...current, [field]: event.target.value }));
 
@@ -69,16 +71,27 @@ export function LoginForm() {
 
         <label className={`field ${errors.password ? 'field-error' : ''}`}>
           <span>Password</span>
-          <input
-            type="password"
-            name="password"
-            value={values.password}
-            onChange={set('password')}
-            maxLength={LIMITS.password}
-            autoComplete="current-password"
-            aria-invalid={Boolean(errors.password)}
-            required
-          />
+          <span className="field-password">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              name="password"
+              value={values.password}
+              onChange={set('password')}
+              maxLength={LIMITS.password}
+              autoComplete="current-password"
+              aria-invalid={Boolean(errors.password)}
+              required
+            />
+            <button
+              type="button"
+              className="field-password-toggle"
+              onClick={() => setShowPassword((current) => !current)}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+              aria-pressed={showPassword}
+            >
+              <Icon name={showPassword ? 'eyeOff' : 'eye'} size={20} />
+            </button>
+          </span>
           {errors.password && <span className="field-message">{errors.password}</span>}
         </label>
 
